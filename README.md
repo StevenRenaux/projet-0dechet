@@ -2,7 +2,7 @@
 
 Un site de "recettes" (non alimentaires) 0 déchet, type produits ménagers/soins etc...
 
-## Objectif
+## Objectifs
 
 Il s'agit d'un site Internet qui permet de réunir toutes les recettes (ou DIY, etc...) 0 déchet et écologiques des utilisateurs, pour les produits ménagers (lessive, produit pour le sol etc...), de soin (shampoing, crème, déodorant etc ...) ou autre.
 Parce que la plupart de ces astuces sont données individuellement dans des blogs ou les sites persos et il est difficile de s'y retrouver ou de savoir quoi choisir.
