@@ -17,7 +17,7 @@ En tant que visiteur:
 | trier les recettes par note | visualiser facilement les meilleures recettes |
 | trier les recettes par difficulté| visualiser facilement les recettes plus adaptées à mon niveau |
 | filtrer les recettes par catégories | pouvoir accéder plus facilement aux recettes que je recherche |
-| filtrer les recettes par catégories | pouvoir accéder plus facilement aux recettes que je recherche |
+| filtrer les recettes par sous-catégories | pouvoir accéder plus facilement aux recettes que je recherche |
 | filtrer les recettes par types | pouvoir accéder plus facilement aux recettes que je recherche |
 | afficher toutes les recettes d’un utilisateur | visualiser toutes les recettes qu’il a posté |
 | rechercher une recette | trouver une recette correspondant à mon besoin |
