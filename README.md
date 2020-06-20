@@ -61,6 +61,7 @@ En Back:
 
 - Symfony 5
 - MySql
+- Easy Admin
 
 ### Inclus dans le dossier docs
 
