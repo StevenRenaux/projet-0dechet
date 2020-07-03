@@ -11,13 +11,26 @@
         <p>
           <a href="{{ path('main_home')}}">0'Déchet</a> -
           <a href="{{ path('recipe_browse')}}">Toutes les recettes</a> -
+          {% if category is defined %}
+            <a href="{{ path('recipe_browseByCategory', {'slug': category.slug})}}">{{category.name}}</a>
+          {% elseif subCategory is defined%}
+          <a href="{{ path('recipe_browseByCategory', {'slug': subCategory.category.slug})}}">{{subCategory.category.name}}</a> -
+          <a href="{{ path('recipe_browseBySubCategory', {'slug': subCategory.slug})}}">{{subCategory.name}}</a>
+          {% elseif type is defined %}
           <a href="{{ path('recipe_browseByCategory', {'slug': type.subCategory.category.slug})}}">{{type.subCategory.category.name}}</a> -
           <a href="{{ path('recipe_browseBySubCategory', {'slug': type.subCategory.slug})}}">{{type.subCategory.name}}</a> -
           <a href="{{ path('recipe_browseByType', {'slug': type.slug})}}">{{type.name}}</a>
+          {% endif %}
         </p> 
       </div>
       <div class="row justify-content-between px-3 ml-md-2 mr-md-1 main-title">
+      {% if category is defined %}
+        <h2>{{category.name}}</h2> 
+      {% elseif subCategory is defined %}
+        <h2>{{subCategory.name}}</h2>
+      {% elseif type is defined %}
         <h2>{{type.name}}</h2>
+      {% endif %}
         <form class="main-sort" method="get">
           <select class="main-sort-select" name="sortBy" onChange="this.form.submit();">
             <option value="">Trier par</option>
