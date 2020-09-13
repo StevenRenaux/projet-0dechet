@@ -68,6 +68,3 @@ En Back:
 - Des images du projet une fois fini
 - Le MCD
 
-### Lien du site en production
-
-[0'Déchet](https://0dechet.ddns.net/recette/)
