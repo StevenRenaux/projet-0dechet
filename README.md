@@ -1,4 +1,4 @@
-# [0'Déchet](https://0dechet.ddns.net/recette/)
+# 0'Déchet
 
 Un site de "recettes" (non alimentaires) 0 déchet, type produits ménagers/soins etc...
 
