@@ -334,7 +334,7 @@ class RecipeController extends AbstractController
         if (empty($recipes->getItems()) && $recipes->getCurrentPageNumber() !== 1) {
             throw $this->createNotFoundException('Pas de recette'); 
         } else {   // If number of pagination exist we return the view
-            return $this->render('recipe/category-sub-type.html.twig', [
+            return $this->render('recipe/category.html.twig', [
                 'recipes' => $recipes,
                 'category' => $category,
                 'title' => $category->getName(),
@@ -361,7 +361,7 @@ class RecipeController extends AbstractController
         if (empty($recipes->getItems()) && $recipes->getCurrentPageNumber() !== 1) {
             throw $this->createNotFoundException('Pas de recette'); 
         } else {   // If number of pagination exist we return the view
-            return $this->render('recipe/category-sub-type.html.twig', [
+            return $this->render('recipe/subCategory.html.twig', [
                 'recipes' => $recipes,
                 'subCategory' => $subCategory,
                 'title' => $subCategory->getName(),
@@ -388,7 +388,7 @@ class RecipeController extends AbstractController
         if (empty($recipes->getItems()) && $recipes->getCurrentPageNumber() !== 1) {
             throw $this->createNotFoundException('Pas de recette'); 
         } else {   // If number of pagination exist we return the view
-            return $this->render('recipe/category-sub-type.html.twig', [
+            return $this->render('recipe/type.html.twig', [
                 'recipes' => $recipes,
                 'type' => $type,
                 'title' => $type->getName(),

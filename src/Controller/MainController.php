@@ -40,7 +40,7 @@ class MainController extends AbstractController
 
         $form->handleRequest($request);
 
-        $secretKey = '6LfROqMZAAAAAJrcinhNGi9nDeaO1EKf-pIPY2Fw';
+        $secretKey = '6LeTkOIZAAAAAB7n7-5R-hD8VtVwPjg_Bwxb250t';
         $responseKey = $request->request->get('g-recaptcha-response');
         $userIP = $_SERVER['REMOTE_ADDR'];
 

@@ -2,19 +2,20 @@ let app = {
 
     init: function(){
         // Url adress
-        let currentUrl = document.location.href; 
+        let currentUrl = document.location.href;
 
         //We delete the last / in the url if we have it
         let newCurrentUrl = currentUrl.replace(/\/$/, "");
 
-        // We get the slug behind the last / in the new current Url
+        // With the IF we get the slug behind the last / in the new current Url
+        // and we made an indexOf("?") == -1 to don't accept the search result url
         if (newCurrentUrl.indexOf( "?" ) == -1) {
             slugUrl = newCurrentUrl.substring(newCurrentUrl.lastIndexOf( "/" )+1);
         } else {
             slugUrl = newCurrentUrl.substring(newCurrentUrl.lastIndexOf( "/" )+1, newCurrentUrl.indexOf( "?" ));
         }
 
-        // If the length of the node list is different of 0 we can lunch the method to have the filter on the left menu 
+        // If the length of the node list is different of 0 we can launch the method to have the filter on the left menu 
         // or the selector is not find in the DOM
         if(document.querySelectorAll('.left-nav-label-category').length !== 0){
 
@@ -75,7 +76,7 @@ let app = {
             //console.log(typeLiElement[i].dataset.type);
 
             // If the slug in the url and the dataset in the li are egal we come in
-            if(slugUrl === typeLiElement[i].dataset.type){     
+            if(slugUrl === typeLiElement[i].dataset.type){
 
                 // We can configure the link of the type bold for the result who passed the condition
                 typeLiElement[i].querySelector('.left-nav-link-type').style.fontWeight = 'bold';
@@ -97,5 +98,5 @@ let app = {
 
 }
 
-// On veut exécuter app.init une fois que la page chargée
+// We can launch app.init when the DOM is loaded
 document.addEventListener('DOMContentLoaded', app.init);

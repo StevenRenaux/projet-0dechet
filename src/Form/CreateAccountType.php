@@ -53,7 +53,6 @@ class CreateAccountType extends AbstractType
                 // ]),
                 // ]
             ])
-
             // This add is for the edit and not for the add (create a new account)
             ->add('password', RepeatedType::class,[
                 'type'=>PasswordType::class,
@@ -88,6 +87,8 @@ class CreateAccountType extends AbstractType
                 'help' => 'La photo doit faire 4Mo maximum',
                 'attr' => ['placeholder' => 'Sélectionner votre fichier']
             ])
+
+                // src\Form\CreateAccountType.php
 
                 // To modify the form, it depend of the context
             ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {

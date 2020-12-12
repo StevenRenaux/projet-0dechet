@@ -16,7 +16,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 
 class UserController extends AbstractController
@@ -49,7 +49,7 @@ class UserController extends AbstractController
 
         $userForm->handleRequest($request);
 
-        $secretKey = '6LfROqMZAAAAAJrcinhNGi9nDeaO1EKf-pIPY2Fw';
+        $secretKey = '6LeTkOIZAAAAAB7n7-5R-hD8VtVwPjg_Bwxb250t';
         $responseKey = $request->request->get('g-recaptcha-response');
         $userIP = $_SERVER['REMOTE_ADDR'];
 
@@ -57,7 +57,6 @@ class UserController extends AbstractController
         $response = file_get_contents($url);
 
         $response = json_decode($response);
-
 
             if ($userForm->isSubmitted() && $userForm->isValid() /*&& $response->success == true*/) {
                 $userPassword = $userForm->getData()->getPassword();
@@ -106,7 +105,7 @@ class UserController extends AbstractController
                             'username' => $user->getUsername(),
                         ]);
                 
-                $mailer->send($email);
+                // $mailer->send($email);
 
                 $this->addFlash(
                     'success',
@@ -136,7 +135,7 @@ class UserController extends AbstractController
 
         $userForm->handleRequest($request);
 
-        $secretKey = '6LfROqMZAAAAAJrcinhNGi9nDeaO1EKf-pIPY2Fw';
+        $secretKey = '6LeTkOIZAAAAAB7n7-5R-hD8VtVwPjg_Bwxb250t';
         $responseKey = $request->request->get('g-recaptcha-response');
         $userIP = $_SERVER['REMOTE_ADDR'];
 
@@ -202,9 +201,7 @@ class UserController extends AbstractController
                         'Votre compte a bien été modifié, un email de confirmation a été envoyé.'
                     );
 
-                    return $this->redirectToRoute('user_read', [
-                        'slug' => $user->getSlug(),
-                    ]);
+                    return $this->redirectToRoute('main_home');
                 } else {
                     $em->refresh($user);
                 }

@@ -30,43 +30,43 @@ class EmbedVideo
     public function searchVideoId($urlAdress)
     {
 	$vid = '';
-	$type = 0;
+	$type = '';
 	if(strpos($urlAdress, 'youtube') !== false){
 		// youtube
 		if(preg_match('/(.+)youtube\.com\/watch\?v=([\w-]+)/', $urlAdress, $vid)){
 			// we keep the id of the video extract by preg_match and put in an array
-			$vid = $vid[2];
+			$videoId = $vid[2];
 			$type = 'youtube';
 		}
 
 	}elseif(strpos($urlAdress, 'youtu.be') !== false){
 		// youtu.be
 		if(preg_match('/(.+)youtu.be\/([\w-]+)/', $urlAdress, $vid)){
-			$vid = $vid[2];
+			$videoId = $vid[2];
 			$type = 'youtube';
 		}
 
 	}elseif(strpos($urlAdress, 'vimeo') !== false){
 		// vimeo
 		if(preg_match('/https:\/\/vimeo.com\/([\w-]+)/', $urlAdress, $vid)){
-			$vid = $vid[1];
+			$videoId = $vid[1];
 			$type = 'vimeo';
 		}
 
 	}elseif(strpos($urlAdress, 'dailymotion') !== false){
 		// dailymotion
 		if(preg_match('/(.+)dailymotion.com\/video\/([\w-]+)/', $urlAdress, $vid)){
-			$vid = $vid[2];
+			$videoId = $vid[2];
 			$type = 'dailymotion';
 		}
 
 	}elseif(strpos($urlAdress, 'dai.ly') !== false){
 		// dailymotion
 		if(preg_match('/(.+)dai.ly\/([\w-]+)/', $urlAdress, $vid)){
-			$vid = $vid[2];
+			$videoId = $vid[2];
 			$type = 'dailymotion';
 		}
     }
-    return empty($type) ? 0 : ['type'=>$type, 'videoId'=>$vid];
+    return empty($type) ? '' : ['type'=>$type, 'videoId'=>$videoId];
     }
 }
